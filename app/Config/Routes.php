@@ -34,6 +34,16 @@ $routes->match(['get','post'],'/sindromes', 'Sindromes::index',['filter'=>'filte
 // $routes->group('api', ['filter' => 'api-auth'], static function ($routes) {
 //     $routes->resource('users');//cria todos os metodos
 // });
+$routes->group('atendimentos', static function ($routes) {
+    $routes->post('create', 'Atendimentos::create');
+});
+
+// $router->post(
+//     '/questionario/inserir',
+//     fn (Request $request) => (new QuestionarioController())
+//     ->enviarDadosQuestionario($request->getJson())
+// );
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
