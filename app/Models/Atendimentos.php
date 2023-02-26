@@ -28,10 +28,20 @@ class Atendimentos extends Model
     protected $deletedField  = '';
 
     // Validation
-    protected $validationRules      = [];
+    protected $validationRules      = [
+        'localizacao' => [
+            'label' => 'Localização',
+            'rules' => 'required'
+        ],
+        'ip' => [
+            'rules' => 'required|is_unique[atendimentos.ip]'
+        ],
+        'profissao_usuario' => [
+            'label' => 'Profissão do usuário',
+            'rules' => 'required'
+        ]
+    ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
-
-    
 }

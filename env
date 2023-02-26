@@ -14,7 +14,7 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
@@ -39,13 +39,13 @@ CI_ENVIRONMENT = production
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+database.default.hostname = us-cdbr-east-06.cleardb.net
+database.default.database = heroku_c909f29d241efb0
+database.default.username = b97fa86845bd63
+database.default.password = b12d8812
+database.default.DBDriver = MySQLi
+database.default.port = 3306
 # database.default.DBPrefix =
-# database.default.port = 3306
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4_test
@@ -55,14 +55,14 @@ CI_ENVIRONMENT = production
 # database.tests.DBPrefix =
 # database.tests.port = 3306
 
-database.db.hostname = localhost
-database.db.database = oauth
-database.db.username = igor.lamoia
-database.db.password = 123456
-database.db.DBDriver = PDO
-database.db.DBPrefix =
-database.db.port = 3306
-database.db.DSN = "mysql:dbname=oauth;host=localhost"
+# database.db.hostname = localhost
+# database.db.database = oauth
+# database.db.username = igor.lamoia
+# database.db.password = 123456
+# database.db.DBDriver = PDO
+# database.db.DBPrefix =
+# database.db.port = 3306
+# database.db.DSN = "mysql:dbname=oauth;host=localhost"
 
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY
