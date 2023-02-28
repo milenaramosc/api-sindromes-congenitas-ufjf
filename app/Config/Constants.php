@@ -92,3 +92,5 @@ define('EVENT_PRIORITY_NORMAL', 100);
  * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_HIGH instead.
  */
 define('EVENT_PRIORITY_HIGH', 10);
+
+defined('GEOIP2_FILE_DATABASE') || define('GEOIP2_FILE_DATABASE', ROOTPATH . 'vendor/geoip2/geoip2/src/Database/GeoLite2-City.mmdb');

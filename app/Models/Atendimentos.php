@@ -32,13 +32,6 @@ class Atendimentos extends Model
         'localizacao' => [
             'label' => 'Localização',
             'rules' => 'required'
-        ],
-        'ip' => [
-            'rules' => 'required|is_unique[atendimentos.ip]'
-        ],
-        'profissao_usuario' => [
-            'label' => 'Profissão do usuário',
-            'rules' => 'required'
         ]
     ];
     protected $validationMessages   = [];

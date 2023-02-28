@@ -42,6 +42,8 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
+        'GeoIp2\\Database' => ROOTPATH . 'vendor/geoip2/geoip2/src/',
+        'Mpdf\\Mpdf' => ROOTPATH . 'vendor/mpdf/mpdf/',
     ];
 
     /**
