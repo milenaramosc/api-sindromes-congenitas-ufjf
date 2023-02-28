@@ -26,9 +26,6 @@
                 echo "<li class='list-group-item list-group-item-action'>$especialidade</li>";
             }?>
         </ol>
-        <div class="d-flex justify-content-end py-md-4">
-            <a href="http://localhost:8080/relatorio" class="btn btn-success">Gerar relatório</a>
-        </div>
     </div>
 </body>
 

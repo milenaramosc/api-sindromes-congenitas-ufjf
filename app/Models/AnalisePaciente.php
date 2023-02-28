@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AnalisePaciente extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'analisepacientes';
+    protected $table            = 'analise_paciente';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -27,9 +27,6 @@ class AnalisePaciente extends Model
         'form_mao_pe',
         'form_labio_palato',
         'caracteristica_lingua',
-        'desenv_pelo',
-        'form_orgao_rep',
-        'form_nariz',
         'form_orelha',
         'hist_cardiopatico',
         'idade_materna',
@@ -40,21 +37,17 @@ class AnalisePaciente extends Model
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $createdField  = 'data_hora';
+    protected $updatedField  = '';
+    protected $deletedField  = '';
 
     // Validation
     protected $validationRules      = [
         'fk_atendimento' => [
             'label' => 'Atendimento',
-            'rules' => 'required|is_unique[analisepacientes.fk_atendimento]'
-        ],
-        'fk_paciente' => [
-            'label' => 'Paciente',
-            'rules' => 'required'
+            'rules' => 'required|is_unique[analise_paciente.fk_atendimento]'
         ],
         'idade' => [
             'label' => "Idade",
@@ -98,18 +91,6 @@ class AnalisePaciente extends Model
         ],
         'caracteristica_lingua' => [
             'label' => 'Característica da Língua',
-            'rules' => 'required'
-        ],
-        'desenv_pelo' => [
-            'label' => 'Desenvolvimento do Pelo',
-            'rules' => 'required'
-        ],
-        'form_orgao_rep' => [
-            'label' => 'Forma dos Órgãos Reprodutivos',
-            'rules' => 'required'
-        ],
-        'form_nariz' => [
-            'label' => 'Forma do Nariz',
             'rules' => 'required'
         ],
         'form_orelha' => [

@@ -24,7 +24,8 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'filterTeste'   => Auth::class,
-        'postFilter'    => PostFilter::class
+        'postFilter'    => PostFilter::class,
+        'cors' => \Fluent\Cors\Filters\CorsFilter::class
     ];
 
     /**
@@ -33,12 +34,14 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
+            'cors'
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
             'toolbar',
+            'cors'
             // 'honeypot',
             // 'secureheaders',
         ],
