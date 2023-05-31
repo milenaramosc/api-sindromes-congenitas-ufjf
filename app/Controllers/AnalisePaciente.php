@@ -20,6 +20,7 @@ class AnalisePaciente extends BaseController
                 'mensagem' => 'Campos invalidos'
             ])->setStatusCode(400);
         }
+
         return $this->response->setJSON([
             'mensagem' => 'Dados inseridos com sucesso'
         ])->setStatusCode(201);

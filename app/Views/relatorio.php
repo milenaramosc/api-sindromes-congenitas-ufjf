@@ -26,6 +26,15 @@
                 echo "<li class='list-group-item list-group-item-action'>$especialidade</li>";
             }?>
         </ol>
+        <h2>Respostas do questionario:</h2>
+        <ul class="list-group list-group-numbered text-uppercase">
+            <?php
+            foreach ($resposta as $key => $especialidade) {
+            
+                echo "<li class='list-group-item list-group-item-action p-4'> <b>$key</b>:  $especialidade</li>";
+            
+            }?>
+        </ul>
     </div>
 </body>
 
