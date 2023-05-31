@@ -39,10 +39,10 @@ CI_ENVIRONMENT = development
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = us-cdbr-east-06.cleardb.net
-database.default.database = heroku_c909f29d241efb0
-database.default.username = b97fa86845bd63
-database.default.password = b12d8812
+database.default.hostname = localhost
+database.default.database = bd_name
+database.default.username = root
+database.default.password = root
 database.default.DBDriver = MySQLi
 database.default.port = 3306
 # database.default.DBPrefix =
