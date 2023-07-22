@@ -30,7 +30,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/relatorio', 'Pdf::generate');
+$routes->get('/relatorio/(:num)', 'Pdf::generate/$1');
+$routes->get('/relatorio/download/(:num)', 'Pdf::download/$1');
 $routes->get('/atendimentos', 'Atendimentos::get');
 $routes->match(['get', 'post'], '/sindromes', 'Sindromes::index', ['filter' => 'filterTeste']);
 // $routes->group('api', ['filter' => 'api-auth'], static function ($routes) {
