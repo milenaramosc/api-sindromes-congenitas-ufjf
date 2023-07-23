@@ -7,28 +7,27 @@ use App\Controllers\BaseController;
 class Pdf extends BaseController
 {
 
-    public function generate($id_atendimento = 424)
+    public function generate($id_atendimento, $download = false)
     {
+       if(!is_numeric($id_atendimento)){
+            return $this->response->setJSON([
+                'errors' =>  $this->request,
+                'id_atendimento' => $id_atendimento,
+                'mensagem' => 'Campos invalidos'
+            ])->setStatusCode(400);
+        }
         // Create new mPDF object
         $mpdf = new  Mpdf();
-        // return $this->response->setJSON([
-        //     'errors' =>  $this->request,
-        //     'id_atendimento' => $id_atendimento,
-        //     'mensagem' => 'Campos invalidos'
-        // ])->setStatusCode(400);
-        $id_atendimento = $this->request->getVar('id_atendimento');
-       // print_r($id_atendimento);exit();
-        // $modelAnalisePaciente = model('AnaliseRelatorio');
-        // $queryResult = $modelAnalisePaciente
-        //                 ->where('fk_atendimento', $id_atendimento)
-        //                 ->get()->getResultArray();
         $renderTemplate =  new RenderTemplate();
-    
-        // $data['resposta'] = $queryResult;
 
         $html = $renderTemplate->render($id_atendimento);
         $mpdf->WriteHTML($html);
-        
+        if ($download) {
+            return $mpdf->Output('relatorio.pdf', 'D');
+        }
         return redirect()->to($mpdf->Output('relatorio.pdf', 'I'));
+    }
+    public function download($id_atendimento) {
+        $this->generate($id_atendimento, true);
     }
 }
