@@ -27,6 +27,7 @@ class Pdf extends BaseController
             header('Content-Type: application/pdf');
             header('Content-Disposition: attachment; filename="relatorio.pdf"');
             header('Content-Length: ' . strlen($pdfContent));
+            echo $pdfContent;
             exit;
         }
         header('Content-Type: application/pdf');
