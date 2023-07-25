@@ -11,6 +11,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if ($method == "OPTIONS") {
     die();
 }
+
 // Check PHP version.
 $minPhpVersion = '7.4'; // If you update this, don't forget to update `spark`.
 if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
@@ -36,7 +37,7 @@ chdir(FCPATH);
  * This process sets up the path constants, loads and registers
  * our autoloader, along with Composer's, loads our constants
  * and fires up an environment-specific bootstrapping.
- */
+*/ 
 
 // Load our paths config file
 // This is the line that might need to be changed, depending on your folder structure.
