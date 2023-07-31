@@ -23,11 +23,10 @@ class Filters extends BaseConfig
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class,
-        'filterTeste'   => Auth::class,
-        'postFilter'    => PostFilter::class,
-        //'cors' => \Fluent\Cors\Filters\CorsFilter::class,
-        'cors'          => Cors::class
+        'secureheaders' => SecureHeaders::class
+        //'filterTeste'   => Auth::class,
+        //'postFilter'    => PostFilter::class,
+        //'cors' => \Fluent\Cors\Filters\CorsFilter::class
     ];
 
     /**
@@ -36,14 +35,14 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            'cors'
+            //'cors'
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
-            'toolbar',
-            'cors'
+            //'toolbar',
+            //'cors'
             // 'honeypot',
             // 'secureheaders',
         ],
@@ -62,7 +61,7 @@ class Filters extends BaseConfig
      */
     public array $methods = [
         'post' => [
-            'postFilter'
+            //'postFilter'
         ]
     ];
 
