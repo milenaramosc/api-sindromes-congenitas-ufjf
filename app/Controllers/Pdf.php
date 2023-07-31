@@ -22,10 +22,17 @@ class Pdf extends BaseController
 
         $html = $renderTemplate->render($id_atendimento);
         $mpdf->WriteHTML($html);
+        $pdfContent = $mpdf->Output('relatorio.pdf', 'S');
         if ($download) {
-            return $mpdf->Output('relatorio.pdf', 'D');
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="relatorio.pdf"');
+            header('Content-Length: ' . strlen($pdfContent));
+            echo $pdfContent;
+            exit;
         }
-        return redirect()->to($mpdf->Output('relatorio.pdf', 'I'));
+        header('Content-Type: application/pdf');
+        echo $pdfContent;
+        exit;
     }
     public function download($id_atendimento) {
         $this->generate($id_atendimento, true);

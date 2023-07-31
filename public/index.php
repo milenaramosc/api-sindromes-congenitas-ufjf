@@ -1,4 +1,16 @@
 <?php
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Headers: *');
+// header('Access-Control-Allow-Methods: *');
+
+// //unlock cors
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method');
+// header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
+// $method = $_SERVER['REQUEST_METHOD'];
+// if ($method == "OPTIONS") {
+//     die();
+// }
 
 // Check PHP version.
 $minPhpVersion = '7.4'; // If you update this, don't forget to update `spark`.
@@ -25,7 +37,7 @@ chdir(FCPATH);
  * This process sets up the path constants, loads and registers
  * our autoloader, along with Composer's, loads our constants
  * and fires up an environment-specific bootstrapping.
- */
+*/ 
 
 // Load our paths config file
 // This is the line that might need to be changed, depending on your folder structure.

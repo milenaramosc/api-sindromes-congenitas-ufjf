@@ -11,7 +11,7 @@ class RenderTemplate extends BaseController
         // exit((string)$id_atendimento);
         $modelAnalisePaciente = model('AnaliseRelatorio');
         $queryResult = $modelAnalisePaciente
-                        ->where('fk_atendimento', 394) //(int)$id_atendimento 
+                        ->where('fk_atendimento', $id_atendimento) //(int)$id_atendimento 
                         ->get()->getResultArray();
         $data['resposta'] =  $queryResult[0];
 
