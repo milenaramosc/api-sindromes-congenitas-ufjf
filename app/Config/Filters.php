@@ -2,15 +2,9 @@
 
 namespace Config;
 
-use App\Filters\Auth;
-use App\Filters\PostFilter;
 use CodeIgniter\Config\BaseConfig;
-use CodeIgniter\Filters\CSRF;
-use CodeIgniter\Filters\DebugToolbar;
-use CodeIgniter\Filters\Honeypot;
-use CodeIgniter\Filters\InvalidChars;
-use CodeIgniter\Filters\SecureHeaders;
-use App\Filters\Cors;
+use App\Filters\AnalisePacienteFilter;
+
 
 class Filters extends BaseConfig
 {
@@ -19,14 +13,7 @@ class Filters extends BaseConfig
      * make reading things nicer and simpler.
      */
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class
-        //'filterTeste'   => Auth::class,
-        //'postFilter'    => PostFilter::class,
-        //'cors' => \Fluent\Cors\Filters\CorsFilter::class
+        'filterAnalisePaciente'   => AnalisePacienteFilter::class
     ];
 
     /**
@@ -35,16 +22,10 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            //'cors'
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            //'filterAnalisePaciente'
         ],
         'after' => [
-            //'toolbar',
-            //'cors'
-            // 'honeypot',
-            // 'secureheaders',
+            //'filterAnalisePaciente'
         ],
     ];
 
@@ -72,5 +53,8 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+        'filterAnalisePaciente' => ['before' => ['atendimento/insert']],
+        //'auth' => ['before' => ['atendimento/insert']]
+    ];
 }

@@ -16,7 +16,7 @@ class Atendimentos extends BaseController
             ['pt-BR']
         );
         
-        $ip_address =  '177.37.126.30' ?? $this->request->getIPAddress();
+        $ip_address = $this->request->getIPAddress() ?? '177.37.126.30';
         $record = $reader->city($ip_address);
 
         $location = $record->city->name . "," . // exibe o nome da cidade

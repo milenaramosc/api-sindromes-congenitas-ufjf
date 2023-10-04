@@ -20,13 +20,13 @@
             </h6>
         </div>
         <p class="list-group-item fw-bold fs-6 pt-4" aria-current="true">Consultar as possiveis especialidades:</p>
-        <ol class="list-group list-group-numbered text-uppercase">
+        <ol class="list-group list-group-numbered text-uppercase mb-4">
             <?php
             foreach ($especialidades as $especialidade) {
                 echo "<li class='list-group-item list-group-item-action'>$especialidade</li>";
             }?>
         </ol>
-        <h2>Respostas do questionario:</h2>
+        <h6>Respostas do questionario:</h6>
         <ul class="list-group list-group-numbered text-uppercase">
             <?php
             foreach ($resposta as $key => $especialidade) {

@@ -9,7 +9,6 @@ class AnalisePaciente extends BaseController
     public function insert()
     {
         $request = $this->request->getJSON(true);
-        // return $this->response->setJSON($request);
         $modelAnalisePaciente = model('AnalisePaciente');
         $request['fk_atendimento'] = $request['id_atendimento'];
         $modelAnalisePaciente->insert($request);
