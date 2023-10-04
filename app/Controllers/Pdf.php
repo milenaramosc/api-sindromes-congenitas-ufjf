@@ -17,7 +17,7 @@ class Pdf extends BaseController
             ])->setStatusCode(400);
         }
         // Create new mPDF object
-        $mpdf = new  Mpdf();
+        $mpdf = new  Mpdf(['tempDir' => ROOTPATH . 'public/reports']);
         $renderTemplate =  new RenderTemplate();
 
         $html = $renderTemplate->render($id_atendimento);
