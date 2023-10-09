@@ -22,6 +22,7 @@ class RenderTemplate extends BaseController
             ap.idade_materna, ap.idade_paterna, ap.aquisicao_linguagem,
             ap.atraso_neuropsicomotor, ap.desenv_extremidade
         )', 'INNER', false)
+        ->where('ap.fk_adentimento', $id_atendimento)
         ->groupBy('em.nome_especialidade, s.nome_sintoma, s.descricao_sintoma')
         ->get();
 
